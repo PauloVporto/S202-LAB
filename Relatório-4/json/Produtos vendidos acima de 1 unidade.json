@@ -1,0 +1,50 @@
+[
+    {
+        "_id": "Cerveja",
+        "total_sold": 12
+    },
+    {
+        "_id": "Carne",
+        "total_sold": 2
+    },
+    {
+        "_id": "Sabonete",
+        "total_sold": 3
+    },
+    {
+        "_id": "Laranja",
+        "total_sold": 4
+    },
+    {
+        "_id": "Detergente",
+        "total_sold": 2
+    },
+    {
+        "_id": "Mortadela",
+        "total_sold": 8
+    },
+    {
+        "_id": "Bolacha",
+        "total_sold": 6
+    },
+    {
+        "_id": "Refrigerante",
+        "total_sold": 4
+    },
+    {
+        "_id": "Macarr\u00e3o",
+        "total_sold": 4
+    },
+    {
+        "_id": "Banana",
+        "total_sold": 4
+    },
+    {
+        "_id": "Tomate",
+        "total_sold": 2
+    },
+    {
+        "_id": "Ma\u00e7\u00e3",
+        "total_sold": 3
+    }
+]
