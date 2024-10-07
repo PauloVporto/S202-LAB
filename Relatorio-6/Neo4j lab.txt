@@ -1,0 +1,47 @@
+
+Questão 01
+
+1. Todos os registros do banco de dados:
+   MATCH (n)
+   RETURN n
+
+2. Jogos lançados após o ano de 2012:
+   MATCH (g:Game)
+   WHERE g.ano > 2012
+   RETURN g
+
+3. Jogos do gênero de terror:
+   MATCH (g:Game)
+   WHERE g.genero = 'Terror'
+   RETURN g
+
+4. Jogos com uma nota igual ou maior que 7:
+   MATCH (j:Jurado)-[r:JOGOU]->(g:Game)
+   WHERE r.nota >= 7
+   RETURN g, r.nota
+
+Questão 02
+
+1. Acrescente quatro novos jogos ao banco de dados:
+   CREATE (g1:Game {titulo: 'The Witcher 3', genero: 'RPG', ano: 2015});
+   CREATE (g2:Game {titulo: 'Cyberpunk 2077', genero: 'RPG', ano: 2020});
+   CREATE (g3:Game {titulo: 'Resident Evil Village', genero: 'Terror', ano: 2021});
+   CREATE (g4:Game {titulo: 'Halo Infinite', genero: 'Shooter', ano: 2021});
+
+2. Adicione três novos jurados ao banco de dados:
+   CREATE (j1:Jurado {nome: 'Lucas'});
+   CREATE (j2:Jurado {nome: 'Mariana'});
+   CREATE (j3:Jurado {nome: 'Felipe'});
+
+3. Estabeleça as relações entre os jurados e os jogos que eles avaliaram, incluindo a nota e a quantidade de horas jogadas:
+   MATCH (j1:Jurado {nome: 'Lucas'}), (g1:Game {titulo: 'The Witcher 3'})
+   CREATE (j1)-[:JOGOU {nota: 9, horas: 150}]->(g1);
+
+   MATCH (j2:Jurado {nome: 'Mariana'}), (g2:Game {titulo: 'Cyberpunk 2077'})
+   CREATE (j2)-[:JOGOU {nota: 8, horas: 80}]->(g2);
+
+   MATCH (j3:Jurado {nome: 'Felipe'}), (g3:Game {titulo: 'Resident Evil Village'})
+   CREATE (j3)-[:JOGOU {nota: 7, horas: 40}]->(g3);
+
+   MATCH (j1:Jurado {nome: 'Lucas'}), (g4:Game {titulo: 'Halo Infinite'})
+   CREATE (j1)-[:JOGOU {nota: 6, horas: 100}]->(g4);
